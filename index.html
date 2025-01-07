@@ -22,6 +22,39 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
+	<style>.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+	.gallery-item {
+		width: 200px;
+		height: 200px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #ddd;
+		background-color: #f9f9f9;
+		text-align: center;
+	}
+	.gallery-item.hidden {
+		display: none;
+	}
+	.filter-buttons {
+		margin-bottom: 20px;
+	}
+	.filter-buttons button {
+		margin-right: 10px;
+		padding: 10px 20px;
+		border: none;
+		background-color: #ff3c00;
+		color: white;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	.filter-buttons button:hover {
+		background-color: #b39800;
+	}</style>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -376,6 +409,30 @@
 		</div>
 	</section>
 
+	<section style="display:flex;align-items: center; justify-content: center; flex-direction: column;">
+		<h1>Gallery Filter</h1>
+    <div class="filter-buttons">
+        <button data-filter="all">All</button>
+        <button data-filter="illustration">Football</button>
+        <button data-filter="graphic-design">Painting</button>
+        <button data-filter="photography">Photography</button>
+    </div>
+    <div class="gallery">
+        <div class="gallery-item" data-category="illustration">
+			<img
+			src="https://img.freepik.com/free-vector/soccer-concept-illustration_114360-2020.jpg?t=st=1736232058~exp=1736235658~hmac=bda0703207a47b66bfff459d00e361471671113e17500aebb353c19a183c4623&w=740" style="object-fit: cover; width: 100%; height: 100%;"></div>
+        <div class="gallery-item" data-category="graphic-design">
+			<img
+			src="https://img.freepik.com/premium-vector/illustration-vector-graphic-barong-mask-suitable-tshirt-design-logo-design-etc_491824-38.jpg?w=740" style="object-fit: cover; width: 100%; height: 100%;"></div>
+        <div class="gallery-item" data-category="photography">
+			<img
+			src="https://img.freepik.com/free-photo/beautiful-couple-spend-time-autumn-field_1157-35837.jpg?t=st=1736232881~exp=1736236481~hmac=f688d33cec8dcd4378544384475b98f34aaa1d334a273cda69f96cee819b1350&w=740" style="object-fit: cover; width: 100%; height: 100%;"></div>
+        <div class="gallery-item" data-category="graphic-design">
+			<img
+			src="https://img.freepik.com/free-vector/abstract-colourful-mosaic-wave-line-background_460848-11924.jpg?t=st=1736232729~exp=1736236329~hmac=5bf77cbef92d8efa8b996ba2df12e38dc822fe262a7cc45d0bbbdfa0101b534e&w=360" style="object-fit: cover; width: 100%; height: 100%;"></div>
+    </div>
+	</section>
+
 	<section class="ftco-section ftco-project" id="sertifikat-section">
 		<div class="container">
 			<div class="row justify-content-center pb-5">
@@ -477,6 +534,10 @@
 		</div>
 	</section>
 
+<section style="display:flex;align-items: center; justify-content: center; flex-direction: column;">
+	<h1>Location</h1>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.339690042008!2d106.68693566979852!3d-6.344945848005212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e50078ae00b1%3A0x81a60674ba49b072!2sUnpam%20Viktor!5e1!3m2!1sid!2sid!4v1736230195736!5m2!1sid!2sid" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
 
 	<footer class="ftco-footer ftco-section">
 		<div class="container">
@@ -554,5 +615,30 @@
 	<script src="js/main.js"></script>
 
 </body>
+<script>document.addEventListener("DOMContentLoaded", () => {
+    // Ambil semua tombol filter dan item galeri
+    const filterButtons = document.querySelectorAll(".filter-buttons button");
+    const galleryItems = document.querySelectorAll(".gallery-item");
 
+    // Tambahkan event listener pada setiap tombol
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Dapatkan kategori yang dipilih
+            const filter = button.getAttribute("data-filter");
+
+            // Loop melalui setiap item galeri
+            galleryItems.forEach(item => {
+                const category = item.getAttribute("data-category");
+
+                // Tampilkan atau sembunyikan item berdasarkan kategori
+                if (filter === "all" || category === filter) {
+                    item.classList.remove("hidden");
+                } else {
+                    item.classList.add("hidden");
+                }
+            });
+        });
+    });
+});
+</script>
 </html>
