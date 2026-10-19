@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aplikasi Hafalan Qur'an - Wasilatul Muhtadin</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; color: #222; line-height: 1.6; background: #f7f7f7; }
+  header { background: #047857; color: white; padding: 40px 20px; text-align: center; }
+  header h1 { margin: 0 0 8px; font-size: 28px; }
+  header p { margin: 0; }
+  .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+  h2 { color: #047857; border-bottom: 2px solid #047857; padding-bottom: 5px; margin-top: 40px; }
+  h3 { margin-bottom: 5px; }
+  .fitur { display: flex; gap: 25px; margin: 25px 0; align-items: flex-start; }
+  .fitur img { width: 220px; border: 1px solid #ccc; border-radius: 8px; }
+  .fitur ul, .fitur ol { padding-left: 20px; margin: 5px 0; }
+  .back { display: inline-block; margin-top: 20px; color: #047857; }
+  footer { text-align: center; padding: 20px; background: #047857; color: white; margin-top: 40px; font-size: 14px; }
+  @media (max-width: 600px) {
+    .fitur { flex-direction: column; align-items: center; }
+    .fitur img { width: 70%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+
+  <h2>Tentang Aplikasi</h2>
+  <p>Ini adalah proyek aplikasi mobile yang saya buat untuk membantu santri menyetor hafalan Al-Qur'an kepada ustadz. Biasanya setoran dicatat di buku, jadi saya ingin memindahkannya ke aplikasi supaya lebih rapi dan mudah dilihat kembali. Di bawah ini adalah penjelasan setiap tampilan aplikasinya.</p>
+
+  <h2>Panduan Penggunaan</h2>
+
+  <div class="fitur">
+    <img src="images/login.jpeg" alt="Halaman login">
+    <div>
+      <h3>1. Halaman Login</h3>
+      <p>Halaman pertama saat aplikasi dibuka. Santri masuk memakai akun masing-masing.</p>
+      <ol>
+        <li>Isi email dan password</li>
+        <li>Tekan tombol Login</li>
+        <li>Kalau lupa password, tekan "Lupa Password?"</li>
+        <li>Kalau belum punya akun, tekan "Daftar"</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="fitur">
+    <img src="images/dashboard.jpeg" alt="Halaman beranda">
+    <div>
+      <h3>2. Beranda</h3>
+      <p>Halaman utama setelah login. Isinya:</p>
+      <ul>
+        <li>Waktu sholat berikutnya beserta hitung mundurnya</li>
+        <li>Level dan XP santri</li>
+        <li>Misi harian (setoran, quiz, murajaah)</li>
+        <li>Statistik hafalan: total, diterima, perbaikan, dan menunggu</li>
+      </ul>
+      <p>Fitur level dan misi saya buat supaya santri lebih semangat menghafal setiap hari.</p>
+    </div>
+  </div>
+
+  <div class="fitur">
+    <img src="images/setoran.jpeg" alt="Halaman input setoran">
+    <div>
+      <h3>3. Setor Hafalan Baru</h3>
+      <p>Tempat santri mengisi data hafalan yang akan disetorkan.</p>
+      <ol>
+        <li>Isi juz (1-30)</li>
+        <li>Pilih surah</li>
+        <li>Isi halaman</li>
+        <li>Isi ayat mulai dan ayat selesai</li>
+        <li>Tulis catatan (kalau perlu)</li>
+        <li>Tekan "Lanjut Rekam" untuk merekam bacaan</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="fitur">
+    <img src="images/riwayat.jpeg" alt="Halaman riwayat setoran">
+    <div>
+      <h3>4. Riwayat Setoran</h3>
+      <p>Berisi tabel semua setoran yang pernah dilakukan: surah, juz, ayat, dan tanggalnya. Datanya bisa difilter dan bisa diunduh jadi PDF lewat tombol Export PDF.</p>
+    </div>
+  </div>
+
+  <div class="fitur">
+    <img src="images/belajar.jpeg" alt="Halaman belajar">
+    <div>
+      <h3>5. Belajar</h3>
+      <p>Menu untuk latihan supaya hafalan tidak lupa:</p>
+      <ul>
+        <li><b>Latihan</b> - mode baca dan mode murajaah</li>
+        <li><b>Quiz</b> - uji hafalan dengan soal yang berubah-ubah</li>
+        <li><b>Setoran</b> - melihat setoran yang sudah divalidasi ustadz</li>
+        <li><b>Ujian</b> - ujian bulanan dari admin</li>
+      </ul>
+      <p>Ada juga menu Peringkat untuk melihat perbandingan XP antar santri.</p>
+    </div>
+  </div>
+
+  <h2>Kekurangan</h2>
+  <ul>
+    <li>Masih membutuhkan koneksi internet</li>
+    <li>Rekaman setoran masih dicek manual oleh ustadz</li>
+    <li>Pengisian data setoran masih banyak yang manual</li>
+    <li>Baru tersedia untuk Android</li>
+    <li>Statistik belum selengkap yang saya inginkan</li>
+  </ul>
+
+  <h2>Kesulitan Saat Membuat</h2>
+  <ul>
+    <li>Menentukan alur setoran supaya mudah dipakai santri dan ustadz</li>
+    <li>Mengatur data juz, surah, dan jumlah ayat agar input tidak salah</li>
+    <li>Membuat sistem status setoran (menunggu, diterima, perbaikan)</li>
+    <li>Menghitung XP, level, dan misi harian</li>
+    <li>Membuat tampilan tetap rapi di layar HP</li>
+  </ul>
+
+  <h2>Yang Saya Dapatkan</h2>
+  <ul>
+    <li>Pengalaman membuat aplikasi dari awal sampai jadi</li>
+    <li>Belajar membuat tampilan yang mudah dipakai orang lain</li>
+    <li>Belajar tentang login, penyimpanan data, dan export PDF</li>
+    <li>Membuat aplikasi yang benar-benar bermanfaat untuk pesantren</li>
+  </ul>
+
+</div>
+</body>
+</html>
